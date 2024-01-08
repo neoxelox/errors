@@ -2,7 +2,17 @@
 
 **`Highly opinionated Go errors package.`**
 
-![Sample output](sample.png "Sample output")
+## Console Output
+
+![Console output](console.png "Console output")
+
+## Sentry Output
+
+![Sentry output](sentry.png "Sentry output")
+
+## New Relic Output
+
+TODO
 
 ## Install
 
@@ -10,7 +20,7 @@
 
 ## Usage
 
-Check and run the example test file [errors_test](errors_test.go): `go test -v`.
+Check and run the example test file [errors_test](errors_test.go): `go test -v --run TestPrint`.
 
 See [`GoDev`](https://pkg.go.dev/github.com/neoxelox/errors) for further documentation.
 
