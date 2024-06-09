@@ -24,6 +24,14 @@ func TestPrint(t *testing.T) {
 		t.FailNow()
 	}
 
+	if !ErrCannotDeposit.In(err) {
+		t.FailNow()
+	}
+
+	if !ErrUserNotFound.In(err) {
+		t.FailNow()
+	}
+
 	cerr, ok := err.(*errors.Error)
 	if !ok {
 		t.FailNow()
@@ -57,6 +65,14 @@ func TestString(t *testing.T) {
 		t.FailNow()
 	}
 
+	if !ErrCannotDeposit.In(err) {
+		t.FailNow()
+	}
+
+	if !ErrUserNotFound.In(err) {
+		t.FailNow()
+	}
+
 	cerr, ok := err.(*errors.Error)
 	if !ok {
 		t.FailNow()
@@ -87,6 +103,14 @@ func TestSentry(t *testing.T) {
 	}
 
 	if !ErrCannotDeposit.Is(err) {
+		t.FailNow()
+	}
+
+	if !ErrCannotDeposit.In(err) {
+		t.FailNow()
+	}
+
+	if !ErrUserNotFound.In(err) {
 		t.FailNow()
 	}
 

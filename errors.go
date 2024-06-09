@@ -185,6 +185,18 @@ func (self Error) Has(err error) bool {
 	return false
 }
 
+// In checks whether the Error itself is wrapped inside an error.
+func (self Error) In(err error) bool {
+	switch err := err.(type) {
+	case Error:
+		return err.Has(self)
+	case *Error:
+		return err.Has(self)
+	default:
+		return false
+	}
+}
+
 // String implements the Stringer interface.
 func (self Error) String() string {
 	causeMessage := ""
